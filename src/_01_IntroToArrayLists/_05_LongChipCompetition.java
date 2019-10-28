@@ -7,18 +7,26 @@ import javax.swing.JOptionPane;
 
 public class _05_LongChipCompetition {
 	/**
-	 * The Beatles are eating lunch and playing a game to see who has the longest
-	 * chip. (In England, french fries are called "chips".) * Find the Beatle with
-	 * the longest chip. You may not edit the Chip or Beatle classes. Make sure to
-	 * initialize The Beatles before you start your search. *
+	 * The Beatles are eating lunch and playing a game to see who has the
+	 * longest chip. (In England, french fries are called "chips".) * Find the
+	 * Beatle with the longest chip. You may not edit the Chip or Beatle
+	 * classes. Make sure to initialize The Beatles before you start your
+	 * search. *
 	 **/
 	private ArrayList<Beatle> theBeatles = new ArrayList<Beatle>();
 
 	public static void main(String[] args) {
 		_05_LongChipCompetition lcc = new _05_LongChipCompetition();
-		
+		lcc.initializeBeatles();
+		for (int i = 0; i < lcc.theBeatles.size(); i++) {
+			ArrayList<Beatle> beat=lcc.getTheBand() ;
+			for (int j = 0; j < args.length; j++) {
+				
+			}
+		}
+
 	}
-	
+
 	private void initializeBeatles() {
 		Beatle george = new Beatle("George");
 		Beatle john = new Beatle("John");
@@ -29,8 +37,8 @@ public class _05_LongChipCompetition {
 		theBeatles.add(paul);
 		theBeatles.add(ringo);
 	}
-	
-	public ArrayList<Beatle> getTheBand(){
+
+	public ArrayList<Beatle> getTheBand() {
 		return theBeatles;
 	}
 }
