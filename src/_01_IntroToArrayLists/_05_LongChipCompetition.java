@@ -18,13 +18,19 @@ public class _05_LongChipCompetition {
 	public static void main(String[] args) {
 		_05_LongChipCompetition lcc = new _05_LongChipCompetition();
 		lcc.initializeBeatles();
+		double lon = 0;
+		Beatle chap = new Beatle("");
 		for (int i = 0; i < lcc.theBeatles.size(); i++) {
-			ArrayList<Beatle> beat=lcc.getTheBand() ;
-			for (int j = 0; j < args.length; j++) {
-				
+			ArrayList<Chip> chomp = lcc.theBeatles.get(i).getChips();
+			for (int j = 0; j < chomp.size(); j++) {
+				if (chomp.get(j).getLength() > lon) {
+					lon = chomp.get(j).getLength();
+					chap = lcc.theBeatles.get(i);
+				}
 			}
 		}
-
+		System.out.println(chap.getName());
+		System.out.println(lon);
 	}
 
 	private void initializeBeatles() {
