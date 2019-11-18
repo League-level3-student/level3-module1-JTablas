@@ -1,8 +1,8 @@
 package _02_Integer_Stack;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 class IntegerStackTest {
 
