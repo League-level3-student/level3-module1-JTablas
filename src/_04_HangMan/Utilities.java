@@ -22,7 +22,7 @@ public class Utilities {
 			}
 
 			br.close();
-
+			
 		} catch (FileNotFoundException e) {
 			JOptionPane.showMessageDialog(null, "Could not find file.", "ERROR", 1);
 		} catch (IOException e) {
