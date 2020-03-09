@@ -22,6 +22,10 @@ public class HangMan implements KeyListener {
 	String wo;
 	String spaces = "";
 
+	Boolean less = true;
+	
+	Boolean correct = false;
+
 	public static void main(String[] args) {
 		HangMan stuff = new HangMan();
 	}
@@ -36,10 +40,16 @@ public class HangMan implements KeyListener {
 			hang.push(Utilities.readRandomLineFromFile("dictionary.txt"));
 			System.out.println(hang);
 		}
-
+		JOptionPane.showMessageDialog(null, "Guess letters that match the word.");
 		int let = 0;
+		if (less == true) {
 
-		wo = hang.pop();
+			wo = hang.pop();
+			System.out.println(wo);
+
+			less = false;
+
+		}
 
 		for (int i = 0; i < wo.length(); i++) {
 
@@ -48,21 +58,18 @@ public class HangMan implements KeyListener {
 		System.out.println(spaces);
 
 		label.setText(spaces);
+
 		panel.add(label);
 		frame.add(panel);
 		frame.setTitle("HangMan");
 		frame.addKeyListener(this);
 
 		frame.setVisible(true);
-		panel.setVisible(true); 
+		panel.setVisible(true);
 		label.setVisible(true);
 
 		frame.pack();
-		
-		if (spaces.) {
-			
-		}
-		
+
 	}
 
 	@Override
@@ -71,13 +78,25 @@ public class HangMan implements KeyListener {
 		String blank = "";
 		for (int i = 0; i < wo.length(); i++) {
 			if (wo.charAt(i) == type) {
-				blank +=wo.charAt(i);
-			}else{
+				blank += wo.charAt(i);
+				correct=true;
+				
+			} else {
 				blank += spaces.charAt(i);
 			}
 		}
 		spaces = blank;
 		label.setText(spaces);
+		if (correct==false) {
+			lives--;
+			System.out.println(lives);
+		}
+		
+		if (spaces.contains("_") == false) {
+			JOptionPane.showMessageDialog(null, "Good, now for another word!");
+			System.out.println("good");
+			less = true;
+		}
 	}
 
 	@Override
